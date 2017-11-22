@@ -17,8 +17,11 @@ using namespace std;
 class Sommet {
     string name;
 public:
+    Sommet(string n);
+    Sommet();
     string getName();
     bool operator==(const Sommet& s);
+    void operator=(const Sommet& s);
 };
 
 #endif /* Sommet_hpp */
