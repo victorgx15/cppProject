@@ -16,12 +16,17 @@ using namespace std;
 
 class Sommet {
     string name;
+    int numeroSommet;
+    static int num;
 public:
     Sommet(string n);
     Sommet();
     string getName();
-    bool operator==(const Sommet& s);
+    bool operator==(const Sommet& s) const;
     void operator=(const Sommet& s);
+    bool operator<(const Sommet& rhs) const {
+        return this->numeroSommet < rhs.numeroSommet; 
+    }
 };
 
 #endif /* Sommet_hpp */

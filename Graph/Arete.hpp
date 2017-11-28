@@ -14,13 +14,18 @@
 
 class Arete {
     Sommet x, y;
-    int distance;
+    int distance, numeroArete;
+    static int nume;
 public:
     Arete(Sommet xx, Sommet yy, int dist);    
     void afficher();
     Sommet getX();
+    int getDistance();
     Sommet getY();
     bool operator==(const Arete& a);
+    bool operator<(const Arete& ar) const {
+        return this->numeroArete < ar.numeroArete;
+    }
 };
 
 #endif /* Arete_hpp */

@@ -15,16 +15,19 @@ Sommet::Sommet(string n) {
 
 Sommet::Sommet() {
     name = "";
+    numeroSommet = num++;
 }
 
 string Sommet::getName() {
     return name;
 }
 
-bool Sommet::operator==(const Sommet& s) {
+bool Sommet::operator==(const Sommet& s) const {
     return s.name == this->name;
 }
 
 void Sommet::operator=(const Sommet& s) {
     name = s.name;
 }
+
+int Sommet::num = 0;

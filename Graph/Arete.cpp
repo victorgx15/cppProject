@@ -12,10 +12,12 @@ Arete::Arete(Sommet xx, Sommet yy, int dist) {
     x = xx;
     y = yy;
     distance = dist;
+    numeroArete = nume++;
 }
 
 void Arete::afficher() {
-    cout<< "(" << x.getName() << ", " << y.getName() << ", poid=" << distance << ")" << endl;
+    cout    << "(" << x.getName() << ", " << y.getName() << ", poid="
+            << distance << ")" << endl;
 }
 
 Sommet Arete::getX() {
@@ -26,7 +28,13 @@ Sommet Arete::getY() {
     return y;
 }
 
+int Arete::getDistance() {
+    return distance;
+}
+
 bool Arete::operator==(const Arete& a) {
     return  (this->x == a.x && this->y == a.y) ||
-            (this->y == a.x && this->x == a.y);
+    (this->y == a.x && this->x == a.y);
 }
+
+int Arete::nume = 0;
