@@ -12,29 +12,35 @@ Arete::Arete(Sommet xx, Sommet yy, int dist) {
     x = xx;
     y = yy;
     distance = dist;
-    numeroArete = nume++;
 }
 
 void Arete::afficher() {
-    cout    << "(" << x.getName() << ", " << y.getName() << ", poid="
-            << distance << ")" << endl;
+    cout << x.getName() << "->" << y.getName() << ", poid=" << distance << endl;
 }
 
 Sommet Arete::getX() {
     return x;
 }
 
+bool Arete::unSommet(Sommet s) {
+    return s == getY() || s == getX();
+}
+
 Sommet Arete::getY() {
     return y;
+}
+
+Sommet Arete::getExtremite(Sommet xl) {
+    if (xl == x)
+        return y;
+    return x;
 }
 
 int Arete::getDistance() {
     return distance;
 }
 
-bool Arete::operator==(const Arete& a) {
+bool Arete::operator==(const Arete& a) const {
     return  (this->x == a.x && this->y == a.y) ||
     (this->y == a.x && this->x == a.y);
 }
-
-int Arete::nume = 0;

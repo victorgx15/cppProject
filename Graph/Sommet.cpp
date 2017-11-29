@@ -9,25 +9,22 @@
 #include "Sommet.hpp"
 #include <string>
 
-Sommet::Sommet(string n) {
-    name = n;
+Sommet::Sommet(int n) {
+    numero = n;
 }
 
 Sommet::Sommet() {
-    name = "";
-    numeroSommet = num++;
+    numero = 0;
 }
 
-string Sommet::getName() {
-    return name;
+int Sommet::getName() {
+    return numero;
 }
 
 bool Sommet::operator==(const Sommet& s) const {
-    return s.name == this->name;
+    return s.numero == this->numero;
 }
 
 void Sommet::operator=(const Sommet& s) {
-    name = s.name;
+    numero = s.numero;
 }
-
-int Sommet::num = 0;

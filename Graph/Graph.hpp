@@ -18,20 +18,15 @@
 using namespace std;
 
 class Graph {
-    set<Sommet> listSommets;
-    set<Arete> listAretes;
+    vector<Arete> listAretes;
 public:
-    //Renvoi un graphe qui est un arbre couvrant minimal avec l'algo de Prim
-    Graph parcoursPrim(Sommet);
-    
-    //Donne l'arête la plus courte passant par le sommet passé en argument
+    Graph parcoursPrim(Sommet); //Parcours avec algo de Prim
+    set<Sommet> getSommets();
     Arete arretePlusCourte(Sommet s);
-    
-    //La plus grande arête
+    vector<Arete> listArrPar(Sommet s);
     Arete biggestArete();
-    
-    Graph(Sommet s);
-    void ajoutSommet(Sommet s);
+    Arete getAreteOf(Sommet, Sommet);
+    Graph(Arete a);
     void ajoutArete(Arete a);
     void afficher();
 };

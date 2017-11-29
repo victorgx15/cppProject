@@ -15,17 +15,15 @@
 using namespace std;
 
 class Sommet {
-    string name;
-    int numeroSommet;
-    static int num;
+    int numero;
 public:
-    Sommet(string n);
+    Sommet(int n);
     Sommet();
-    string getName();
+    int getName();
     bool operator==(const Sommet& s) const;
     void operator=(const Sommet& s);
     bool operator<(const Sommet& rhs) const {
-        return this->numeroSommet < rhs.numeroSommet; 
+        return this->numero < rhs.numero; 
     }
 };
 
