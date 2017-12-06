@@ -9,9 +9,7 @@
 #include "Graph.hpp"
 #include <iostream>
 
-Graph::Graph(Arete a) {
-    listAretes.push_back(a);
-}
+Graph::Graph(Arete a) { listAretes.push_back(a); }
 
 void Graph::ajoutArete(Arete a) {
     bool existe = false;
@@ -60,8 +58,10 @@ Graph Graph::parcoursPrim(Sommet s1) {
         
         //parcours les sommets du nouvel arbre
         for (Sommet s: arb.getSommets()) {
+            
             //parcours les aretes passant par le sommet s
             for(Arete adp: listArrPar(s)) {
+                
                 //si l'autre sommet n'existe pas dans arb.getSommets()
                 bool existe = false;
                 for(Sommet sss: arb.getSommets())

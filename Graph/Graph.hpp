@@ -18,16 +18,37 @@
 using namespace std;
 
 class Graph {
+    // La liste des arêtes dans le graphe
     vector<Arete> listAretes;
+    
 public:
-    Graph parcoursPrim(Sommet); //Parcours avec algo de Prim
+    
+    // Parcours avec l'algorithme de Prim
+    Graph parcoursPrim(Sommet);
+    
+    /* Renvoyer la liste de sommets dans le graphe. Le "set" est un tableau
+     dynamique qui n'ajoute pas d'éléments déjà existant */
     set<Sommet> getSommets();
+    
+    // Renvoyer la plus petite arête passant par le sommet en argument
     Arete arretePlusCourte(Sommet s);
+    
+    // Renvoyer toutes les arêtes passant pas le sommet en argument
     vector<Arete> listArrPar(Sommet s);
+    
+    // Renvoyer la plus grande arête du graphe
     Arete biggestArete();
+    
+    // Renvoyer l'arête reliant 2 sommets en arguments
     Arete getAreteOf(Sommet, Sommet);
+    
+    // Utile pour renvoyer l'arbre couvrant
     Graph(Arete a);
+    
+    // Ajouter une arête dans le graphe
     void ajoutArete(Arete a);
+    
+    // Afficher le graphe
     void afficher();
 };
 

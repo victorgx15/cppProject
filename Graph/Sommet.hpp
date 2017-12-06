@@ -15,16 +15,21 @@
 using namespace std;
 
 class Sommet {
+    // On nomme un sommet par son numéro
     int numero;
 public:
+    
+    // Construire un sommet à l'aide d'un nom en argument
     Sommet(int n);
     Sommet();
+    
+    //Renvoyer son nom
     int getName();
+    
+    // Redéfinir des opérations, notamment pour évaluer des conditions
     bool operator==(const Sommet& s) const;
     void operator=(const Sommet& s);
-    bool operator<(const Sommet& rhs) const {
-        return this->numero < rhs.numero; 
-    }
+    bool operator<(const Sommet& rhs) const;
 };
 
 #endif /* Sommet_hpp */

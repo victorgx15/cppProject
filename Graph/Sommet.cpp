@@ -28,3 +28,7 @@ bool Sommet::operator==(const Sommet& s) const {
 void Sommet::operator=(const Sommet& s) {
     numero = s.numero;
 }
+
+bool Sommet::operator<(const Sommet& rhs) const {
+    return this->numero < rhs.numero;
+}
